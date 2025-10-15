@@ -6,6 +6,7 @@ const categoryDataAddedToDBrouter = require('./routes/categoryimport.route');
 const categoryDataRouter = require('./routes/category.route');
 const singleHotelRouter = require('./routes/singlehotel.route');
 const authRouter = require('./routes/auth.route');
+const wishListRouter = require('./routes/wishlist.route');
 
 const dotEnv = require('dotenv');
 dotEnv.config();
@@ -29,6 +30,7 @@ app.use('/api/auth', authRouter);
 app.use('/api/hotels', singleHotelRouter);
 app.use('/api/categories', categoryDataRouter);
 app.use("/api/hotels", hotelRouter);
+app.use('/api/wishlist', wishListRouter);
 
 connectDB();
 
