@@ -9,9 +9,10 @@ router.route("/").post(async (req, res) => {
     try {
         await Hotel.deleteMany({})
         const hotelInDB = await Hotel.insertMany(hotels.data)
+        console.log(hotelInDB)
         res.json(hotelInDB);
     } catch (err) {
-        console.log(err)
+        console.log("err is " , err)
         res.json({ message: "could not inserted in DB" });
     }
 });
